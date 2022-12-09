@@ -61,5 +61,22 @@ namespace VendorAndOrderTracker.Tests
       //Assert
       Assert.AreEqual(description, result);
     }
+
+    [TestMethod]
+    public void SetDescription_SetDescription_String()
+    {
+      //Arrange
+      string vendorName = "Star Cafe";
+      string description = "Diner";
+      Vendor newVendor = new Vendor(vendorName, description);
+
+      //Act
+      string updatedDescription = "Restaurant";
+      newVendor.Description = updatedDescription;
+      string result = newVendor.Description;
+
+      //Assert
+      Assert.AreEqual(updatedDescription, result);
+    }
   }
 }
