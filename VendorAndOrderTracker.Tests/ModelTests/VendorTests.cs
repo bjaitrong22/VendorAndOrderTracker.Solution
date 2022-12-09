@@ -14,5 +14,19 @@ namespace VendorAndOrderTracker.Tests
       Vendor newVendor = new Vendor("test Vendor");
       Assert.AreEqual(typeof(Vendor), newVendor.GetType());
     }
+
+    [TestMethod]
+    public void GetName_ReturnsName_String()
+    {
+      //Arrange
+      string vendorName = "Star Cafe";
+      Vendor newVendor = new Vendor(vendorName);
+
+      //Act 
+      string result = newVendor.Name;
+
+      //Assert
+      Assert.AreEqual(vendorName,result);
+    }
   }
 }
