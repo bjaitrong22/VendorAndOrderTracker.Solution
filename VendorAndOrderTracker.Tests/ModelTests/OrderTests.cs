@@ -62,6 +62,23 @@ namespace VendorAndOrderTracker.Tests
 
       //Assert
       Assert.AreEqual(description, result);
-    }    
+    } 
+
+    [TestMethod]
+    public void SetDescription_SetDescription_String()
+    {
+      //Assert
+      string title = "Bread Order";
+      string description = "100 loaves of rye bread";
+      Order newOrder = new Order(title,description);
+
+      //Act
+      String updatedDescription = "200 loaves of rye bread";
+      newOrder.Description = updatedDescription;
+      string result = newOrder.Description;
+
+      //Assert
+      Assert.AreEqual(updatedDescription, result);
+    }   
   }
 }
