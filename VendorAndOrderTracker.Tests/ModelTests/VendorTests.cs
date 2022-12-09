@@ -11,7 +11,7 @@ namespace VendorAndOrderTracker.Tests
     [TestMethod]
     public void VendorConstructor_CreatesInstanceOfVendor_Vendor()
     {
-      Vendor newVendor = new Vendor("test Vendor");
+      Vendor newVendor = new Vendor("test Vendor","test description");
       Assert.AreEqual(typeof(Vendor), newVendor.GetType());
     }
 
@@ -20,7 +20,8 @@ namespace VendorAndOrderTracker.Tests
     {
       //Arrange
       string vendorName = "Star Cafe";
-      Vendor newVendor = new Vendor(vendorName);
+      string description = "Diner";
+      Vendor newVendor = new Vendor(vendorName,description);
 
       //Act 
       string result = newVendor.Name;
@@ -34,7 +35,8 @@ namespace VendorAndOrderTracker.Tests
     {
       //Arrange
       string vendorName = "Star Cafe";
-      Vendor newVendor = new Vendor(vendorName);
+      string description = "Diner";
+      Vendor newVendor = new Vendor(vendorName,description);
 
       //Act 
       string updatedName = "Moon and Stars Cafe";
@@ -43,6 +45,21 @@ namespace VendorAndOrderTracker.Tests
 
       //Assert
       Assert.AreEqual(updatedName,result);
+    }
+
+    [TestMethod]
+    public void GetDescription_ReturnsDescription_String()
+    {
+      //Arrange
+      string vendorName = "Star Cafe";
+      string description = "Diner";
+      Vendor newVendor = new Vendor(vendorName, description);
+
+      //Act
+      string result = newVendor.Description;
+
+      //Assert
+      Assert.AreEqual(description, result);
     }
   }
 }
