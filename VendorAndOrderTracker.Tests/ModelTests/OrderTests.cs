@@ -101,5 +101,23 @@ namespace VendorAndOrderTracker.Tests
       //Assert
       Assert.AreEqual(price,result);
     }  
+
+    [TestMethod]
+    public void SetPrice_SetPrice_Decimal()
+    {
+      //Arrange
+      string title = "Bread Order";
+      string description = "100 loaves of rye bread";
+      decimal price = 335.00M;
+      Order newOrder = new Order(title,description,price);
+
+      //Act
+      decimal updatedPrice = 345.20M;
+      newOrder.Price = updatedPrice;
+      decimal result = newOrder.Price;
+
+      //Assert
+      Assert.AreEqual(updatedPrice, result);
+    }
   }
 }
