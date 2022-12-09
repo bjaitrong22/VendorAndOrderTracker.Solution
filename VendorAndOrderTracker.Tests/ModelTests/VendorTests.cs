@@ -28,5 +28,21 @@ namespace VendorAndOrderTracker.Tests
       //Assert
       Assert.AreEqual(vendorName,result);
     }
+
+    [TestMethod]
+    public void SetName_SetNamez_String()
+    {
+      //Arrange
+      string vendorName = "Star Cafe";
+      Vendor newVendor = new Vendor(vendorName);
+
+      //Act 
+      string updatedName = "Moon and Stars Cafe";
+      newVendor.Name = updatedName;
+      string result = newVendor.Name;
+
+      //Assert
+      Assert.AreEqual(updatedName,result);
+    }
   }
 }
