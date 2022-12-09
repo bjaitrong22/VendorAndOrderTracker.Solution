@@ -13,7 +13,8 @@ namespace VendorAndOrderTracker.Tests
     {
       string title = "Test Order";
       string description = "Test description";
-      Order newOrder = new Order(title,description);
+      decimal price = 1.00M;
+      Order newOrder = new Order(title,description,price);
       Assert.AreEqual(typeof(Order),newOrder.GetType());
     }
 
@@ -23,7 +24,8 @@ namespace VendorAndOrderTracker.Tests
       //Arrange
       string title = "Bread Order";
       string description = "100 loaves of rye bread";
-      Order newOrder = new Order(title,description);
+      decimal price = 335.00M;
+      Order newOrder = new Order(title,description,price);
 
       //Act
       string result = newOrder.Title;
@@ -38,7 +40,8 @@ namespace VendorAndOrderTracker.Tests
       //Arrange
       string title = "Bread Order";
       string description = "100 loaves of rye bread";
-      Order newOrder = new Order(title,description);
+      decimal price = 335.00M;
+      Order newOrder = new Order(title,description,price);
 
       //Act
       string updatedTitle = "Croissant Order";
@@ -55,7 +58,8 @@ namespace VendorAndOrderTracker.Tests
       //Arrange
       string title = "Bread Order";
       string description = "100 loaves of rye bread";
-      Order newOrder = new Order(title,description);
+      decimal price = 335.00M;
+      Order newOrder = new Order(title,description,price);
 
       //Act
       string result = newOrder.Description;
@@ -67,10 +71,11 @@ namespace VendorAndOrderTracker.Tests
     [TestMethod]
     public void SetDescription_SetDescription_String()
     {
-      //Assert
+      //Arrange
       string title = "Bread Order";
       string description = "100 loaves of rye bread";
-      Order newOrder = new Order(title,description);
+      decimal price = 335.00M;
+      Order newOrder = new Order(title,description,price);
 
       //Act
       String updatedDescription = "200 loaves of rye bread";
@@ -79,6 +84,22 @@ namespace VendorAndOrderTracker.Tests
 
       //Assert
       Assert.AreEqual(updatedDescription, result);
-    }   
+    } 
+
+    [TestMethod]
+    public void GetOrderPrice_ReturnsOrderPrice_Decimal()
+    {
+      //Arrange
+      string title = "Bread Order";
+      string description = "100 loaves of rye bread";
+      decimal price = 335.00M;
+      Order newOrder = new Order(title,description,price);
+
+      //Act
+      decimal result = newOrder.Price;
+
+      //Assert
+      Assert.AreEqual(price,result);
+    }  
   }
 }
