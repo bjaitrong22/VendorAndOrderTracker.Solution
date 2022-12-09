@@ -12,7 +12,7 @@ namespace VendorAndOrderTracker.Tests
     public void OrderConstructor_CreatesInstanceOfOrder_Order()
     {
       string title = "Bread Order";
-      
+
       Order newOrder = new Order(title);
       Assert.AreEqual(typeof(Order),newOrder.GetType());
     }
@@ -30,5 +30,21 @@ namespace VendorAndOrderTracker.Tests
       //Assert
       Assert.AreEqual(title, result);
     }
+
+    [TestMethod]
+    public void SetTitle_SetTitle_String()
+    {
+      //Arrange
+      string title = "Bread Order";
+      Order newOrder = new Order(title);
+
+      //Act
+      string updatedTitle = "Croissant Order";
+      newOrder.Title = updatedTitle;
+      string result = newOrder.Title;
+
+      //Assert
+      Assert.AreEqual(updatedTitle, result);
+    }    
   }
 }
