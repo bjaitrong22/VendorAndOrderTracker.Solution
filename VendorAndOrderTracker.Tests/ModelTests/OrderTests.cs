@@ -175,5 +175,41 @@ namespace VendorAndOrderTracker.Tests
       //Assert
       CollectionAssert.AreEqual(newList, result);
     }
+
+    [TestMethod]
+    public void GetId_OrderInstantiateWithAnIdandGetterReturns_Int()
+    {
+      //Arrange
+      string title = "Croissant Order";
+      string description = "100 Blue Berry filled";
+      decimal price = 400.00M;
+      Order newOrder = new Order(title,description,price);
+
+      //Act
+      int result = newOrder.Id;
+
+      //Assert
+      Assert.AreEqual(1,result);  
+    }
+
+    [TestMethod]
+    public void Find_ReturnsCorrectOrder_Order()
+    {
+      //Arrange
+      string title01 = "Bread Order";
+      string description01 = "100 loaves of rye bread";
+      decimal price01 = 335.00M;
+      string title02 = "Croissant Order";
+      string description02 = "100 Blue Berry filled";
+      decimal price02 = 400.00M;
+      Order newOrder1 = new Order(title01,description01,price01);
+      Order newOrder2 = new Order(title02,description02,price02);
+
+      //Act
+      Order result = Order.Find(2);
+
+      //Assert
+      Assert.AreEqual(newOrder2,result);
+    }
   }
 }
