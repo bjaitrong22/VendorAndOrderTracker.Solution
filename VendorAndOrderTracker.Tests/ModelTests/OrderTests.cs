@@ -119,5 +119,22 @@ namespace VendorAndOrderTracker.Tests
       //Assert
       Assert.AreEqual(updatedPrice, result);
     }
+
+    [TestMethod]
+    public void GetDate_ReturnsDate_DateTime()
+    {
+      //Arrange 
+      string dateTime = DateTime.Now.ToString("MM/dd/yyyy HH:mm");
+      string title = "Bread Order";
+      string description = "100 loaves of rye bread";
+      decimal price = 335.00M;
+      Order newOrder = new Order(title,description,price);
+
+      //Act
+      string result = newOrder.DateAndTime;
+
+      //Assert
+      Assert.AreEqual(dateTime,result);
+    }
   }
 }
