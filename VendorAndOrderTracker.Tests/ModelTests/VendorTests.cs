@@ -117,7 +117,7 @@ namespace VendorAndOrderTracker.Tests
     }
 
     [TestMethod]
-    public void GetId_VendorsInstantiateWithAnIdandGetterReturns_int()
+    public void GetId_VendorsInstantiateWithAnIdandGetterReturnsId_int()
     {
     //Arrange
       string vendorName = "Star Cafe";
