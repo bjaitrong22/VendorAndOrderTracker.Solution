@@ -129,5 +129,23 @@ namespace VendorAndOrderTracker.Tests
       //Assert
       Assert.AreEqual(1, result);
     }
+
+    [TestMethod]
+    public void Find_ReturnsCorrectVendor_Vendor()
+    {
+      //Arrange
+      string name01 = "BlueFin Pub";
+      string description01 = "Bar";
+      string name02 = "Nova's Steak House";
+      string description02 = "Restaurant";
+      Vendor newVendor1 = new Vendor(name01,description01);
+      Vendor newVendor2 = new Vendor(name02,description02);
+
+      //Act
+      Vendor result = Vendor.Find(2);
+
+      //Assert
+      Assert.AreEqual(newVendor2,result);
+    }
   }
 }
