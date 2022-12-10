@@ -177,7 +177,7 @@ namespace VendorAndOrderTracker.Tests
     }
 
     [TestMethod]
-    public void GetId_OrderInstantiateWithAnIdandGetterReturns_Int()
+    public void GetId_OrderInstantiateWithAnIdandGetterReturnsId_Int()
     {
       //Arrange
       string title = "Croissant Order";
