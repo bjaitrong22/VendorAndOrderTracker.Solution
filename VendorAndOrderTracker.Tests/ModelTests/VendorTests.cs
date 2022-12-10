@@ -116,5 +116,18 @@ namespace VendorAndOrderTracker.Tests
       CollectionAssert.AreEqual(newList, result);
     }
 
+    [TestMethod]
+    public void GetId_VendorsInstantiateWithAnIdandGetterReturns_int()
+    {
+    //Arrange
+      string vendorName = "Star Cafe";
+      string description = "Diner";
+      Vendor newVendor = new Vendor(vendorName, description);
+
+      //Act
+      int result = newVendor.Id;
+      //Assert
+      Assert.AreEqual(1, result);
+    }
   }
 }
