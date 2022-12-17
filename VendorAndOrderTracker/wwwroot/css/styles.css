@@ -10,9 +10,22 @@ h1 {
 }
 
 h3,p,form,a {
-  display: block;
+  display:block;
   text-align: center;
   color: white;
+}
+
+ol.vendorOrderOl {
+  display:inline-block;
+  margin-left: 45%;
+  text-align:left;
+  color: whitesmoke;
+}
+
+#orderDetails {
+  display: block;
+  text-align: center;
+  color: whitesmoke;
 }
 
 #addButton {
