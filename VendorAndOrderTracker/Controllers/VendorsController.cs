@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System;
 using Microsoft.AspNetCore.Mvc;
 using VendorAndOrderTracker.Models;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace VendorAndOrderTracker.Controllers
 {
@@ -23,8 +24,15 @@ namespace VendorAndOrderTracker.Controllers
     [HttpPost("/vendors")]
     public ActionResult Create(string vendorName, string vendorDescription)
     {
-      Vendor newVendor = new Vendor(vendorName, vendorDescription);
-      return Redirect("/");
+      if (vendorName != null && vendorDescription != null )
+      {
+        Vendor newVendor = new Vendor(vendorName, vendorDescription);
+        return Redirect("/");
+      }
+      else
+      {
+        return Redirect("/vendors/error");
+      }
     }
 
     [HttpGet("/vendors/{id}")]
@@ -50,5 +58,12 @@ namespace VendorAndOrderTracker.Controllers
       model.Add("vendor", foundVendor);
       return View("Show", model);
     }
+
+    [HttpGet("/vendors/error")]
+    public ActionResult Error()
+    {
+      return View();
+    }
+
   }
 }

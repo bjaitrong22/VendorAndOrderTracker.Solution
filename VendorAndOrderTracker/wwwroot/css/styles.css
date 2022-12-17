@@ -2,7 +2,7 @@ body {
   background-image: url('/img/oliver-timm-haarmann-p6OLZPnq810-unsplash copy.jpg');
 }
 
-h1 {
+h1,h2 {
   display: block;
   margin-top: 1em;
   text-align: center;
